@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 스프링 컨테이너가 사용할 객체 정보를 이곳에 등록 -->
+	<!-- HelloKr h = new HelloKr(); 과 같은 코드 -->
+	<bean id="h" class="spring_app01.HelloCh"></bean>
+
+
+</beans>
