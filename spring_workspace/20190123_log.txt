@@ -1,0 +1,18 @@
++ spring : main 코드를 최대한 수정없이 각각의 역할을 하는 개발자가 원하는 클래스를 만들고 xml을 통해 수정
+	 (특히 우리니라 기업)
+
++ Maven
+  - 왜 ? 
+    spring은 모듈화 되어 있어서 필요한 기능이 있으면 모듈을 가져다 쓰는 방식
+    but 모듈을 사용하려면 필요한 모듈을 라이브러리에 계속 추가
+    각 회사에서 제공하는 모듈을 직접 찾아와서...
+
+ - 그 해결책으로 maven 지원 (다른 많은 용도로도 쓰임)
+
+maven : 빌드툴(build tool) + 오픈소스 버전 관리 용도
+
+mavenrepository.com
+
+spring.io
+
+Maven Dependencies 안됨....
