@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MysqlDAO implements CommonDAO{
-	
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	
@@ -59,8 +58,6 @@ public class MysqlDAO implements CommonDAO{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
 }
 

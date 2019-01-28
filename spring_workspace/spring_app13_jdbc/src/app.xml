@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/itbank?useSSL=false"></property>
+		<property name="username" value="scott" />
+		<property name="password" value="tiger" />
+	</bean> -->
+	
+	<!-- connection pool -->
+	<bean id="pool" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/itbank?useSSL=false"></property>
+		<property name="username" value="scott" />
+		<property name="password" value="tiger" />
+		<!-- 초기에 몇 개를 연결해 놓을지 정할 수 있음 -->
+		<property name="initialSize" value="3" />
+		<!-- 최대 몇 개가 연결되도록 설정할 것인가를 정할 수 있음 -->
+		<property name="maxTotal" value="20" />
+		<!-- 설정만큼 놀면 제거하도록 할 수 있음 -->
+		<property name="maxIdle" value="6000" />
+	</bean>
+	
+	
+	
+	
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<!-- <property name="dataSource" ref="dataSource" /> -->
+		<property name="dataSource" ref="pool" />
+	</bean>
+	
+	<bean id="dao" class="spring_app13_jdbc.MySqlDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+	
+</bean>
+
+</beans>

@@ -1,0 +1,8 @@
+내가 결석한 동안 jdbc 접근 방법들을 공부한듯 - 메서드를 통한 접근 등..
+Maven repository - spring jdbc
+
+요청 : Java -> Listener -> Server Process -> DB Instance (in DBMS)
+응답 : DB Instance -> Server Process -> Listner -> Java
+
+그냥 JDBCTemplate 쓰는건 DB 트래픽 과다 -> pool 사용 -> 
+Maven Repository - commons io, commons pool, commons dbcp
