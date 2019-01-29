@@ -1,0 +1,13 @@
+JPA -> JDBC 이용하는 또 다른 방법... 많이 쓰니까 집가서 해보세요.
+
+Spring 은 모든 객체를 Bean 으로 관리 => src/app.xml 에 bean 으로 선언
+=> 여기서는 ConnectionManager를 MySqlDAO 에 넣어주어야 하니까 
+	ConnectionManager 를 cm 이란 id로 생성하고 (bean 형태로),
+	dao bean 객체를 생성하여 cm을 property로 넘겨줌(변수를 지정해줌)
+
++ AOP (Aspect Oriented Programming) - 관점 지향 프로그래밍
+  : OOP를 더 잘 구현할 수 있도록 도와주는 프로그램
+  : 전체 업무들에서 공통된 업무들을 찾고 그 업무들을 AOP로 만들어 놓고
+    해당 업무 수행 사이 사이에 끼워넣는 형태
+1. AspectJ <-- 제일 많이 씀
+2. Spring
