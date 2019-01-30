@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="interceptor" class="spring_aop02_after_returning_advice.AfterInterceptorAdvice" />
+	<bean id="biz" class="spring_aop02_after_returning_advice.CustomerServiceImpl"
+		p:email="3.1@naver.com" p:name="유관순"
+	>
+		<!-- <property name="name" value="유관순" />
+		<property name="email" value="3.1@naver.com" /> -->
+	</bean>
+	<bean id="proxyBean" class="org.springframework.aop.framework.ProxyFactoryBean"
+		p:target="biz" p:interceptorNames="interceptor"
+	>
+		<!-- <property name="target" ref="biz" />	
+		<property name="interceptorNames">
+			<value>interceptor</value>
+		</property> -->
+	</bean>
+
+</beans>

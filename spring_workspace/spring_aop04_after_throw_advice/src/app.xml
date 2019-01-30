@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="hijack" class="advice.HijackAdvice"/>
+	<bean id="msg" class="spring_aop04_after_throw_advice.MessageImp">
+		<property name="msg" value="문화의 날 - 영화가 반값" />
+	</bean>
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="msg" />
+		<property name="interceptorNames">
+			<value>hijack</value>
+		</property>
+	</bean>
+
+</beans>

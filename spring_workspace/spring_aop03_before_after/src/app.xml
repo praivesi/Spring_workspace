@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="interceptor1" class="advice.Method_BeforeAdvice" />
+	<bean id="interceptor2" class="advice.Method_AfterAdvice" />
+	
+	<bean id="biz" class="spring_aop03_before_after.BankImp">
+		<property name="name" value="신사임당" />
+		<property name="balance" value="10000000" />
+	</bean>
+	
+	<bean id="proxyBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="biz" />
+		<property name="interceptorNames">
+			<list>
+				<value>interceptor1</value>
+				<value>interceptor2</value>
+			</list>
+		</property>
+	
+</bean>
+
+</beans>

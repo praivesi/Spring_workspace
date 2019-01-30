@@ -1,0 +1,9 @@
++ AOP 종류
+
+1. AspectJ
+
+2. Spring - Runtime 시 적용 (Proxy)
+
+App.xml 에서 namespaces의 p 추가 -> bean 태그 안에 property 넣을 수 있다. tag의 속성으로..
+
+Spring Test 는 JUnit 주로 씀.
