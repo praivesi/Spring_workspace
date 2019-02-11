@@ -1,0 +1,7 @@
+여러 개의 DispatcherServlet 을 사용할 떄 ?
+spring configuration file 의 namespace 에서 mvc를 추가
+=> mvc:view-resolvers 태그를 이용
+
+jQuery => javaScript 잘 되어있는 걸 모아놓은 라이브러리
+
+CDN => jQuery 등 이 바뀔때마다 자동으로 http 를 통해 받도록 함. 큰 회사들에서 제공. 최신 업데이트가 자동으로 됨.

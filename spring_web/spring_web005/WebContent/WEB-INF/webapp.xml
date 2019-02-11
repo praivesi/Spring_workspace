@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+	context-path : ex) http://localhost:8080/spring_web005/~~
+	
+	SimpleUrlHandlerMapping : url 을 통한 매핑 시 context-path 를 제외한 나머지 경로로 비교
+	
+	- 경로 매핑 방식
+	1. ? : 1개의 문자 매칭
+	2. * : 0개 이상의 문자 매칭
+	3. ** : 0개 이상의 디렉토리와 매칭
+ -->
+
+<bean id="simpleUrlHandlerMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<property name="alwaysUseFullPath" value="true" />
+	<property name="mappings">
+		<props>
+			<prop key="/*.do">test</prop>
+			<prop key="/**/*.do">hi</prop>
+		</props>
+	</property>
+</bean>
+
+
+<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/jsp/" />
+	<property name="suffix" value=".jsp" />
+</bean>
+
+
+<!-- 위에 SimplerUrlHandlerMapping 에서 지정했던 id를 사용 (즉, "test" 를 id 로 사용) -->
+<bean id="test" class="kr.co.itbank.TestController">
+</bean>
+
+<bean id="hi" class="kr.co.itbank.HiController">
+	
+</bean>
+
+
+
+</beans>

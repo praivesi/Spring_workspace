@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+	annotation 을 사용하면 HandlerMapping 이 default 로 되어있어서 생략 가능
+ -->
+
+<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+</bean>
+
+<bean class="spring_web06_controller_anno.SelectMenuController">
+</bean>
+<bean class="spring_web06_controller_anno.HelloController"></bean>
+
+
+</beans>

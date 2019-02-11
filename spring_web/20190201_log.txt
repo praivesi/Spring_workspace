@@ -1,0 +1,6 @@
++ WAS
+- MVC : Model + View + Control
+
+=> spring framework
+
+Dispatcher Servlet 을 Front Controller 라고도 부름
