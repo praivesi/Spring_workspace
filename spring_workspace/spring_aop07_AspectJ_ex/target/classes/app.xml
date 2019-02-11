@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="hijack" class="advice.CheckTime"></bean>
+	<bean id="weapon" class="spring_aop07_AspectJ_ex.WeaponImp">
+		<property name="type" value="AWM" />
+</bean>
+
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="weapon" />
+		<property name="interceptorNames">
+			<value>hijack</value>
+		</property>
+</bean>
+
+</beans>
