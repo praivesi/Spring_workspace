@@ -7,9 +7,13 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
-	$(functon(){
-		
-		// to do...
+	$(function(){
+		$("#btn").click(function(){
+			//console.log("잘 눌러지나?");
+			
+			document.frm.action="step2.do";
+			document.frm.submit();
+		});
 		
 	});
 </script>

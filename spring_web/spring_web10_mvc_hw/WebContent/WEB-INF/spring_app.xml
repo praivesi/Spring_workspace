@@ -5,18 +5,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!-- 이름에 맞게 알아서 잘 처리해 달라고 스프링에 요청 (default 이기 떄문에 안 넣어도 되긴 하지만, 넣어두는게 편리함) -->
-<mvc:annotation-driven />
-
-
-<!-- 기본적으로 잡혀 있는 주소 외에 처리해 달라고 요청할 경우
-	ex) jsp에서 이미지 파일 부를 때..
- -->
 <mvc:default-servlet-handler/>
 
 <mvc:view-resolvers>
 	<mvc:jsp prefix="/WEB-INF/views/" suffix=".jsp"/>
 </mvc:view-resolvers>
-
 
 </beans>

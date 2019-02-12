@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-<bean id="" class="kr.co.itbank.control.RegisterController">
-	
+<!-- <bean id="id" class="kr.co.itbank.control.RegisterController">
 </bean>
+<bean id="login" class="kr.co.itbank.control.LoginController">
+</bean>
+ -->
+<!-- 컨트롤러 자동으로 추가 : 패키지를 자동으로 인식하도록 설정 -->
+<context:component-scan base-package="kr.co.itbank.*">
+	<!-- <context:exclude-filter type="annotation" expression=""/> 이 부분은 이 패키지에서 제외해줘
+	<context:include-filter type="annotation" expression=""/> 이 부분은 이 패키지에 더 넣어줘 -->
+</context:component-scan>
 
 </beans>
